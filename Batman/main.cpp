@@ -3,6 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const int w=20,h= 20;
 
 void DrawGrid(){
     int x=0,y=0;
@@ -20,8 +21,7 @@ void DrawGrid(){
     glFlush();
 }
 
-
-void Draw(int x,int y,int w,int h){
+void Draw(int x,int y){
     glBegin(GL_POLYGON);
         glVertex2i(x,y);
         glVertex2i(x+w,y);
@@ -30,138 +30,136 @@ void Draw(int x,int y,int w,int h){
     glEnd();
 }
 
-void DrawLine(int x,int y,int w,int h){
+void DrawHorizontalLine(int x,int y){
     for(int i=0;i<7;i++){
-        Draw(x,y,w,h);
+        Draw(x,y);
         y+=20;
     }
 }
 
-void DrawCornerPositive(int x,int y,int w,int h){
+void DrawVerticalLine(int x,int y){
+    for(int i=0;i<17;i++){
+        Draw(x,y);
+        x+=20;
+    }
+}
+
+void DrawCornerPositive(int x,int y){
     for(int i=0;i<6;i++){
-        Draw(x,y,w,h);
+        Draw(x,y);
         x+=20;
         y+=20;
     }
 }
 
-void DrawCornerNegative(int x,int y,int w,int h){
+void DrawCornerNegative(int x,int y){
     for(int i=0;i<6;i++){
-        Draw(x,y,w,h);
+        Draw(x,y);
         x-=20;
         y+=20;
     }
 }
 
-void DrawVertLine(int x,int y,int w,int h){
-    for(int i=0;i<17;i++){
-        Draw(x,y,w,h);
-        x+=20;
-    }
-}
-
-
-void DrawHorizontalRectangle(int x,int y,int w,int h){
+void DrawHorizontalRectangle(int x,int y){
     int temp_x=x;
     for(int j=0;j<5;j++){
         x=temp_x;
         for(int i=0;i<27;i++){
-            Draw(x,y,w,h);
+            Draw(x,y);
             x+=20;
         }
         y+=20;
     }
 }
 
-
-void DrawVerticalRectangle(int x,int y,int w,int h){
+void DrawVerticalRectangle(int x,int y){
     int temp_y=y;
     for(int j=0;j<5;j++){
         y=temp_y;
         for(int i=0;i<13;i++){
-            Draw(x,y,w,h);
+            Draw(x,y);
             y+=20;
         }
         x+=20;
     }
 }
 
-void DrawLower(int x,int y,int w,int h,int n){
+void DrawOuter(int x,int y,int n){
     for(int i=0;i<n;i++){
-        Draw(x,y,w,h);
+        Draw(x,y);
             x+=20;
     }
     y+=20;
 }
 
-
-
 void DrawBatman(){
     glColor3f(0,0,0);
+    int x = 20, y = 220;
+    int DisplayWidth = 660;
+    int DisplayHeight = 660;
 
-    int x = 20, w = 20, h = 20, y = 220;
-    DrawLine(x,y,w,h);
-    DrawLine(660-2*x,y,w,h);
+    DrawHorizontalLine(x,y);
+    DrawHorizontalLine(DisplayWidth-2*x,y);
 
     x = 160,y = 80;
-    DrawVertLine(x,y,w,h);
-    DrawVertLine(x,480,w,h);
+
+    DrawVerticalLine(x,y);
+    DrawVerticalLine(x,480);
 
     x=40,y=360;
-    DrawCornerPositive(x,y,w,h);
-    DrawCornerPositive(500,100,w,h);
+    DrawCornerPositive(x,y);
+    DrawCornerPositive(500,100);
 
     x=140,y=100;
-    DrawCornerNegative(x,y,w,h);
-    DrawCornerNegative(600,360,w,h);
+    DrawCornerNegative(x,y);
+    DrawCornerNegative(600,360);
 
     x=60,y=240;
-    DrawHorizontalRectangle(x,y,w,h);
-    DrawVerticalRectangle(280,180,w,h);
+    DrawHorizontalRectangle(x,y);
+    DrawVerticalRectangle(280,180);
 
     x=60,y=220;
 
-    DrawLower(x+20,y,w,h,25);
+    DrawOuter(x+20,y,25);
+    DrawOuter(x+40,y-20,23);
 
-    DrawLower(x+40,y-20,w,h,23);
+    DrawOuter(x+60,y-40,7);
+    DrawOuter(x+340,y-40,7);
 
-    DrawLower(x+60,y-40,w,h,7);
-    DrawLower(x+340,y-40,w,h,7);
+    DrawOuter(x+80,y-60,5);
+    DrawOuter(x+240,y-60,3);
+    DrawOuter(x+360,y-60,5);
 
-    DrawLower(x+80,y-60,w,h,5);
-    DrawLower(x+240,y-60,w,h,3);
-    DrawLower(x+360,y-60,w,h,5);
+    DrawOuter(x+100,y-80,3);
+    DrawOuter(x+240,y-80,3);
+    DrawOuter(x+380,y-80,3);
 
-    DrawLower(x+100,y-80,w,h,3);
-    DrawLower(x+240,y-80,w,h,3);
-    DrawLower(x+380,y-80,w,h,3);
-
-    DrawLower(x+140,y-100,w,h,1);
-    DrawLower(x+260,y-100,w,h,1);
-    DrawLower(x+380,y-100,w,h,1);
+    DrawOuter(x+140,y-100,1);
+    DrawOuter(x+260,y-100,1);
+    DrawOuter(x+380,y-100,1);
 
     x= 60,y=340;
-    DrawLower(x+20,y,w,h,7);
-    DrawLower(x+200,y,w,h,1);
-    DrawLower(x+320,y,w,h,1);
-    DrawLower(x+380,y,w,h,7);
+    DrawOuter(x+20,y,7);
+    DrawOuter(x+200,y,1);
+    DrawOuter(x+320,y,1);
+    DrawOuter(x+380,y,7);
 
 
-    DrawLower(x+40,y+20,w,h,5);
-    DrawLower(x+400,y+20,w,h,5);
+    DrawOuter(x+40,y+20,5);
+    DrawOuter(x+400,y+20,5);
 
-    DrawLower(x+60,y+40,w,h,4);
-    DrawLower(x+400,y+40,w,h,4);
+    DrawOuter(x+60,y+40,4);
+    DrawOuter(x+400,y+40,4);
 
 
-    DrawLower(x+80,y+60,w,h,3);
-    DrawLower(x+400,y+60,w,h,3);
+    DrawOuter(x+80,y+60,3);
+    DrawOuter(x+400,y+60,3);
 
-    DrawLower(x+100,y+80,w,h,3);
-    DrawLower(x+380,y+80,w,h,3);
+    DrawOuter(x+100,y+80,3);
+    DrawOuter(x+380,y+80,3);
 
-    DrawLower(x+220,y+100,w,h,1);
-    DrawLower(x+300,y+100,w,h,1);
+    DrawOuter(x+220,y+100,1);
+    DrawOuter(x+300,y+100,1);
 
     glFlush();
 }
