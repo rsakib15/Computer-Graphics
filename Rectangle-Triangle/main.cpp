@@ -134,5 +134,3 @@ int main(int argv,char** argc){
     glutMainLoop();
     return 0;
 }
-
-
