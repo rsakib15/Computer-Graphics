@@ -96,7 +96,6 @@ void DrawBatman(){
     glColor3f(0,0,0);
     int x = 20, y = 220;
     int DisplayWidth = 660;
-    int DisplayHeight = 660;
 
     DrawHorizontalLine(x,y);
     DrawHorizontalLine(DisplayWidth-2*x,y);
@@ -107,14 +106,17 @@ void DrawBatman(){
     DrawVerticalLine(x,480);
 
     x=40,y=360;
+
     DrawCornerPositive(x,y);
     DrawCornerPositive(500,100);
 
     x=140,y=100;
+
     DrawCornerNegative(x,y);
     DrawCornerNegative(600,360);
 
     x=60,y=240;
+
     DrawHorizontalRectangle(x,y);
     DrawVerticalRectangle(280,180);
 
@@ -144,13 +146,11 @@ void DrawBatman(){
     DrawOuter(x+320,y,1);
     DrawOuter(x+380,y,7);
 
-
     DrawOuter(x+40,y+20,5);
     DrawOuter(x+400,y+20,5);
 
     DrawOuter(x+60,y+40,4);
     DrawOuter(x+400,y+40,4);
-
 
     DrawOuter(x+80,y+60,3);
     DrawOuter(x+400,y+60,3);
