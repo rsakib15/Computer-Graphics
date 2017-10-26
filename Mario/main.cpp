@@ -7,7 +7,7 @@ const int w=20,h= 20;
 
 void DrawGrid(){
     int x=0,y=0;
-    glColor3f(1.0,1.0,0.0);
+    glColor3f(1.0,1.0,1.0);
     for(int x=0;x<660;x+=20){
         for(int y=0;y<660;y+=20){
             glBegin(GL_POLYGON);
@@ -30,9 +30,79 @@ void Draw(int x,int y){
     glEnd();
 }
 
+void SelectPixel(int x,int y,int n){
+    for(int i=0;i<n;i++){
+        Draw(x,y);
+        x+=20;
+    }
 
-void DrawBatman(){
+}
+
+void DrawMario(){
     glColor3f(0,0,0);
+    int x=200;
+    int y = 140;
+
+    for(int i=0;i<16;i++){
+        if(i==0){
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,4);
+            x+=160;
+            SelectPixel(x,y,4);
+            x=220;
+        }
+        else if(i==1){
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,3);
+            x+=140;
+            SelectPixel(x,y,3);
+            x=240;
+        }
+        else if(i==2){
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,3);
+            x+=100;
+            SelectPixel(x,y,3);
+            x=200;
+        }
+        else if(i==3){
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,8);
+            x+=160;
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,2);
+            x=200;
+        }
+        else if(i==4){
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,3);
+            x+=60;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,1.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,2);
+            x+=40;
+
+            glColor3f(1.0,1.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.31,0.17,0.08);
+            SelectPixel(x,y,3);
+
+            x=200;
+        }
+        y+=20;
+    }
 
 
     glFlush();
@@ -48,7 +118,7 @@ void myInit(){
 void CallFunctions(){
     glClear(GL_COLOR_BUFFER_BIT);
     DrawGrid();
-    DrawBatman();
+    DrawMario();
 }
 
 int main(int argv,char** argc){
