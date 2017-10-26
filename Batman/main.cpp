@@ -165,7 +165,7 @@ void myInit(){
     glClearColor(1.0,0.0,0.0,0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(0.0,660.0,0.0,600.0);
+    gluOrtho2D(0.0,660.0,0.0,660.0);
 }
 
 void CallFunctions(){
