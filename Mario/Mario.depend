@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1509001193 source:e:\my_workplace\c++\graphics\mario\main.cpp
+1509002343 source:e:\my_workplace\c++\graphics\mario\main.cpp
 	<GL/gl.h>
 	<GL/glut.h>
 	<bits/stdc++.h>

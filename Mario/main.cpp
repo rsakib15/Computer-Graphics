@@ -66,18 +66,18 @@ void DrawMario(){
             x=200;
         }
         else if(i==3){
-            glColor3f(0.31,0.17,0.08);
+            glColor3f(1.0,0.7,0.5);
             SelectPixel(x,y,2);
             x+=40;
             glColor3f(1.0,0.0,0.0);
             SelectPixel(x,y,8);
             x+=160;
-            glColor3f(0.31,0.17,0.08);
+            glColor3f(1.0,0.7,0.5);
             SelectPixel(x,y,2);
             x=200;
         }
         else if(i==4){
-            glColor3f(0.31,0.17,0.08);
+            glColor3f(1.0,0.7,0.5);
             SelectPixel(x,y,3);
             x+=60;
             glColor3f(1.0,0.0,0.0);
@@ -89,22 +89,169 @@ void DrawMario(){
             glColor3f(1.0,0.0,0.0);
             SelectPixel(x,y,2);
             x+=40;
-
             glColor3f(1.0,1.0,0.0);
             SelectPixel(x,y,1);
             x+=20;
             glColor3f(1.0,0.0,0.0);
             SelectPixel(x,y,1);
             x+=20;
-            glColor3f(0.31,0.17,0.08);
+            glColor3f(1.0,0.7,0.5);
             SelectPixel(x,y,3);
 
             x=200;
         }
+
+        else if(i==5){
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,4);
+            x+=80;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,2);
+
+            x=200;
+        }
+        else if(i==6){
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,4);
+            x+=80;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,4);
+
+            x=220;
+        }
+        else if(i==7){
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,3);
+            x+=60;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,3);
+
+            x=240;
+
+        }
+        else if(i==8){
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,1.0);
+            SelectPixel(x,y,3);
+
+            x=260;
+        }
+        else if(i==9){
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,7);
+            x=220;
+        }
+        else if(i==10){
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,4);
+            x+=80;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,4);
+
+            x=220;
+        }
+        else if(i==11){
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,3);
+            x+=60;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,3);
+
+            x=220;
+        }
+        else if(i==12){
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,3);
+            x += 60;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,3);
+            x = 240;
+
+        }
+        else if(i==13){
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,3);
+            x+=60;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,2);
+            x+=40;
+            glColor3f(0.0,0.0,0.0);
+            SelectPixel(x,y,1);
+            x+=20;
+            glColor3f(1.0,0.7,0.5);
+            SelectPixel(x,y,1);
+            x = 240;
+        }
+        else if(i==14){
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,9);
+            x = 260;
+        }
+        else if(i==15){
+            glColor3f(1.0,0.0,0.0);
+            SelectPixel(x,y,5);
+        }
         y+=20;
     }
-
-
     glFlush();
 }
 
