@@ -44,18 +44,15 @@ void DrawVerticalLine(int x,int y){
     }
 }
 
-void DrawCornerPositive(int x,int y){
+void DrawCorner(int x,int y,string side){
     for(int i=0;i<6;i++){
         Draw(x,y);
-        x+=20;
-        y+=20;
-    }
-}
-
-void DrawCornerNegative(int x,int y){
-    for(int i=0;i<6;i++){
-        Draw(x,y);
-        x-=20;
+        if(side == "positive"){
+            x+=20;
+        }
+        else if(side=="negative"){
+            x-=20;
+        }
         y+=20;
     }
 }
@@ -107,13 +104,13 @@ void DrawBatman(){
 
     x=40,y=360;
 
-    DrawCornerPositive(x,y);
-    DrawCornerPositive(500,100);
+    DrawCorner(x,y,"positive");
+    DrawCorner(500,100,"positive");
 
     x=140,y=100;
 
-    DrawCornerNegative(x,y);
-    DrawCornerNegative(600,360);
+    DrawCorner(x,y,"negative");
+    DrawCorner(600,360,"negative");
 
     x=60,y=240;
 
@@ -181,7 +178,7 @@ int main(int argv,char** argc){
     glutInit(&argv,argc);
     glutInitWindowSize(660,660);
     glutInitWindowPosition(400,80);
-    glutCreateWindow("Batman");
+    glutCreateWindow("Batman Logo (Sakib)");
     glutDisplayFunc(CallFunctions);
     myInit();
     glutMainLoop();
