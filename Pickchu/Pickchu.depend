@@ -1,10 +1,13 @@
 # depslib dependency file v1.0
-1509003122 source:e:\my_workplace\c++\graphics\mario\main.cpp
-	<GL/gl.h>
+1509038706 source:e:\my_workplace\c++\graphics\pickchu\main.cpp
 	<GL/glut.h>
 	<bits/stdc++.h>
-
-1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
+	<cstdio>
+	<iostream>
+	<cmath>
+	<queue>
+	<cstring>
+	<string>
 
 1506390480 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
@@ -215,6 +218,8 @@
 
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
+
+1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
