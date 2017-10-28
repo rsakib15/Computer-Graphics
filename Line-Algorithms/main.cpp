@@ -28,7 +28,7 @@ void myInit(){
 }
 
 void DrawLine(int x,int y){
-    //cout<<"X: "<<x <<" Y: " <<y<<endl;
+    cout<<"X: "<<x <<" Y: " <<y<<endl;
     glColor3f(0.0,0.0,0.0);
     glBegin(GL_POINTS);
         glVertex2i(x,y);
@@ -36,40 +36,90 @@ void DrawLine(int x,int y){
     glFlush();
 }
 
-void DDA(int x1,int y1,int xn,int yn){
-    int  x, y;
-    float dy = yn-y1;
-    float dx = xn-x1;
-    float m  = dy/dx;
 
-    y=y1;
+void DDA(double x1,double y1,double x2,double y2){
+    double dx = x2-x1;
+    double dy = y2-y1;
+    double len=abs(x2-x1);
 
-    for (x = x1; x < xn; ++x) {
-        DrawLine(x,floor(y+0.5));
-        y = y + m;
+    if(abs(y2-y1)>len){
+        len = abs(y2-y1);
     }
-}
 
-void bresenham(int x1,int y1,int x2,int y2){
-    double m_new = 2 * (y2 - y1);
-    double slope_error_new = m_new - (x2 - x1);
-    for(int x = x1, y = y1; x <= x2; x++){
-        DrawLine(x,y);
-        slope_error_new += m_new;
-        if(slope_error_new >= 0){
-            y++;
-            slope_error_new  -= 2 * (x2 - x1);
-        }
+    double Xinc = dx / (double)len;
+    double Yinc = dy / (double)len;
+
+    double X = x1;
+    double Y = y1;
+
+    for(int i = 0; i <= len; i++){
+        DrawLine(X,Y);
+        X += Xinc;
+        Y += Yinc;
     }
     glFlush();
+}
+
+void Bresenham(int x0,int y0,int x1,int y1) {
+	int x=x0,y=y0;
+	int dx=x1-x0;
+	int dy=y1-y0;
+	int d=2*dy-dx;
+	int dE=2*dy;
+	int dNE=2*(dy-dx);
+	DrawLine(x,y);
+
+	while(x<x1) {
+		if(d<0) {
+			d+=dE;
+		}
+		else {
+			d+=dNE;
+			y++;
+		}
+		x++;
+		DrawLine(x,y);
+	}
+}
+
+
+void LinesDot(int x0,int y0,int x1,int y1) {
+	int x=x0,y=y0;
+	int dx=x1-x0;
+	int dy=y1-y0;
+	int d=2*dy-dx;
+	int dE=2*dy;
+	int dNE=2*(dy-dx);
+	DrawLine(x,y);
+	int cnt=0;
+
+	while(x<x1) {
+
+            if(d<0) {
+                d+=dE;
+            }
+            else {
+                d+=dNE;
+                y++;
+            }
+            x++;
+            if(cnt<4){
+                cnt++;
+            }
+            else{
+                DrawLine(x,y);
+                cnt=0;
+            }
+
+	}
 }
 
 void CallFunctions(){
     glClear(GL_COLOR_BUFFER_BIT);
     DrawGrid();
-    DDA(40,40, 520, 720);
-    //incrementalLine(100, 300, 300, 20);
-    bresenham(20,80, 500, 760);
+    DDA(40,120,400,380);
+    Bresenham(40,80,400,340);
+    LinesDot(40,40,400,300);
 }
 
 int main(int argv,char** argc){

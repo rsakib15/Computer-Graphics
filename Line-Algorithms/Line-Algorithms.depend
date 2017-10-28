@@ -1,8 +1,11 @@
 # depslib dependency file v1.0
-1509106871 source:e:\my_workplace\c++\graphics\line-algorithms\main.cpp
-	<GL/gl.h>
-	<GL/glut.h>
-	<bits/stdc++.h>
+1509165452 source:e:\my_workplace\c++\graphics\line-algorithms\main.cpp
+	<cstdlib>
+	<gl/glut.h>
+	<cmath>
+	<cstdio>
+	<iostream>
+	<ctime>
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
